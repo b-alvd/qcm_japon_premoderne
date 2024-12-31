@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM : Histoire du Japon prémoderne</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .answers {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .correct {
+            background-color: #d4edda;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QCM : Histoire du Japon prémoderne</h1>
+        <div id="quiz"></div>
+        <button id="submit">Soumettre</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                "question": "Quel terme désigne les « savoirs pratiques » au Japon sous les Tokugawa ?",
+                "options": { "A": "Rangaku", "B": "Kokugaku", "C": "Jitsugaku", "D": "Shingaku" },
+                "answer": "C"
+            },
+            {
+                "question": "Les « études pratiques » étaient destinées principalement à :",
+                "options": { "A": "La poésie ancienne", "B": "Les arts du gouvernement", "C": "La médecine occidentale", "D": "L’étude des religions" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel concept était à l’origine du terme « économie » (keizai) ?",
+                "options": { "A": "Keisei Saimin", "B": "Kaitai Shinsho", "C": "Kaikoku Heidan", "D": "Honzôgaku" },
+                "answer": "A"
+            },
+            {
+                "question": "Qui a traduit le premier ouvrage occidental majeur en japonais ?",
+                "options": { "A": "Hirata Atsutane", "B": "Sugita Genpaku", "C": "Noro Genjô", "D": "Maeda Tsunanori" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle discipline scientifique a introduit les études hollandaises au Japon ?",
+                "options": { "A": "Physique", "B": "Botanique médicinale", "C": "Cartographie", "D": "Littérature" },
+                "answer": "B"
+            },
+            {
+                "question": "Qui était le shogun au début de l’ère Edo ?",
+                "options": { "A": "Toyotomi Hideyoshi", "B": "Tokugawa Ieyasu", "C": "Oda Nobunaga", "D": "Tokugawa Yoshimune" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle ville était la capitale administrative du shogunat Tokugawa ?",
+                "options": { "A": "Kyoto", "B": "Osaka", "C": "Edo", "D": "Nagasaki" },
+                "answer": "C"
+            },
+            {
+                "question": "Quel était le statut social des samouraïs pendant l’ère Edo ?",
+                "options": { "A": "Classe marchande", "B": "Classe dirigeante", "C": "Classe paysanne", "D": "Classe religieuse" },
+                "answer": "B"
+            },
+            {
+                "question": "Comment appelle-t-on la politique d’isolement adoptée par le Japon durant l’ère Edo ?",
+                "options": { "A": "Sankin-kôtai", "B": "Sakoku", "C": "Kaikin", "D": "Rangaku" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle était la principale religion associée au shogunat Tokugawa ?",
+                "options": { "A": "Christianisme", "B": "Bouddhisme", "C": "Shintoïsme", "D": "Confucianisme" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle période de l'histoire japonaise a vu l'émergence des samouraïs ?",
+                "options": { "A": "Heian", "B": "Nara", "C": "Kamakura", "D": "Muromachi" },
+                "answer": "C"
+            },
+            {
+                "question": "Quelle est la signification du terme \"bakufu\" ?",
+                "options": { "A": "Administration impériale", "B": "Gouvernement militaire", "C": "Système féodal", "D": "Maison des samouraïs" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel était le rôle principal des daimyos sous les Tokugawa ?",
+                "options": { "A": "Servir comme prêtres", "B": "Gérer leurs fiefs", "C": "Conseiller l'empereur", "D": "Conquérir de nouveaux territoires" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle philosophie influença fortement le shogunat Tokugawa ?",
+                "options": { "A": "Bouddhisme Zen", "B": "Confucianisme", "C": "Shintoïsme", "D": "Taoïsme" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel événement marqua la fin de la période Edo ?",
+                "options": { "A": "La guerre de Boshin", "B": "La restauration Meiji", "C": "L'arrivée de Perry", "D": "La rébellion de Satsuma" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel est le terme japonais pour \"fermeture du pays\" sous les Tokugawa ?",
+                "options": { "A": "Sakoku", "B": "Kaikoku", "C": "Kokugaku", "D": "Rangaku" },
+                "answer": "A"
+            },
+            {
+                "question": "Qui était Oda Nobunaga ?",
+                "options": { "A": "Un daimyo célèbre pour son unité du Japon", "B": "Un moine influent du bouddhisme Zen", "C": "Le premier empereur Meiji", "D": "Un général sous Tokugawa Ieyasu" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel ouvrage japonais a été influencé par les sciences occidentales ?",
+                "options": { "A": "Rangaku Kotohajime", "B": "Seiyou Kibun", "C": "Kaitai Shinsho", "D": "Edo Yarai" },
+                "answer": "C"
+            },
+            {
+                "question": "Quelle ville était le centre politique du Japon pendant l'époque Tokugawa ?",
+                "options": { "A": "Kyoto", "B": "Osaka", "C": "Edo", "D": "Nagasaki" },
+                "answer": "C"
+            },
+            {
+                "question": "Quel terme désigne l'apprentissage des sciences occidentales par les Japonais ?",
+                "options": { "A": "Rangaku", "B": "Seigaku", "C": "Kangaku", "D": "Honzogaku" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle dynastie chinoise a influencé le Japon pendant la période prémoderne ?",
+                "options": { "A": "Tang", "B": "Song", "C": "Ming", "D": "Qing" },
+                "answer": "C"
+            },
+            {
+                "question": "Quel est le rôle du bushido dans la culture japonaise ?",
+                "options": { "A": "Code moral des samouraïs", "B": "Philosophie religieuse", "C": "Système éducatif", "D": "Technique de combat" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle était la principale exportation japonaise sous les Tokugawa ?",
+                "options": { "A": "Soie", "B": "Thé", "C": "Porcelaine", "D": "Argent" },
+                "answer": "D"
+            },
+            {
+                "question": "Quel shogun est considéré comme le fondateur de l'époque Edo ?",
+                "options": { "A": "Toyotomi Hideyoshi", "B": "Tokugawa Ieyasu", "C": "Minamoto Yoritomo", "D": "Ashikaga Takauji" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel traité a ouvert les ports japonais aux Américains en 1854 ?",
+                "options": { "A": "Traité de Kanagawa", "B": "Traité de Shimoda", "C": "Traité de Kyoto", "D": "Traité de Edo" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel est le rôle principal des temples bouddhistes pendant l'époque Edo ?",
+                "options": { "A": "Centres de prière", "B": "Écoles publiques", "C": "Registres familiaux", "D": "Sièges politiques" },
+                "answer": "C"
+            },
+            {
+                "question": "Quelle classe sociale était au sommet pendant l'époque Edo ?",
+                "options": { "A": "Paysans", "B": "Samouraïs", "C": "Marchands", "D": "Artisans" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle est la signification du terme \"Han\" sous les Tokugawa ?",
+                "options": { "A": "Province", "B": "Clan", "C": "Fief", "D": "Château" },
+                "answer": "C"
+            },
+            {
+                "question": "Quel type d'art a prospéré pendant l'époque Edo ?",
+                "options": { "A": "Ukiyo-e", "B": "Ikebana", "C": "Nô", "D": "Sumi-e" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel système éducatif était privilégié sous les Tokugawa ?",
+                "options": { "A": "Confucianisme", "B": "Bouddhisme Zen", "C": "Shintoïsme", "D": "Occidentalisme" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle innovation a marqué la fin de l'isolation japonaise ?",
+                "options": { "A": "Télégraphe", "B": "Vapeur", "C": "Imprimerie", "D": "Canon occidental" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel empereur a initié la modernisation du Japon ?",
+                "options": { "A": "Meiji", "B": "Taisho", "C": "Showa", "D": "Heian" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle est l'importance de l'école Terakoya sous les Tokugawa ?",
+                "options": { "A": "Enseignement bouddhiste", "B": "Éducation des samouraïs", "C": "Éducation des enfants", "D": "Formation militaire" },
+                "answer": "C"
+            },
+            {
+                "question": "Qui était Matthew Perry ?",
+                "options": { "A": "Un commerçant américain", "B": "Un explorateur anglais", "C": "Un commandant naval américain", "D": "Un missionnaire chrétien" },
+                "answer": "C"
+            },
+            {
+                "question": "Quelle est la signification de \"Shogun\" ?",
+                "options": { "A": "Grand général", "B": "Roi militaire", "C": "Gouverneur", "D": "Empereur" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel était le principal port de commerce extérieur sous les Tokugawa ?",
+                "options": { "A": "Osaka", "B": "Kyoto", "C": "Edo", "D": "Nagasaki" },
+                "answer": "D"
+            },
+            {
+                "question": "Quel était le rôle des marchands dans la société Edo ?",
+                "options": { "A": "Au sommet de la hiérarchie", "B": "Inférieur aux paysans et artisans", "C": "Égaux aux samouraïs", "D": "Directeurs des daimyos" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel était l'effet des lois sumptuaires sous les Tokugawa ?",
+                "options": { "A": "Limiter les excès", "B": "Promouvoir le commerce", "C": "Encourager la modernisation", "D": "Interdire les importations" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle influence culturelle est visible dans les jardins japonais prémodernes ?",
+                "options": { "A": "Chinoise", "B": "Coréenne", "C": "Indienne", "D": "Occidentale" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle était la monnaie principale pendant l'époque Edo ?",
+                "options": { "A": "Ryo", "B": "Yen", "C": "Koban", "D": "Mon" },
+                "answer": "C"
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitButton = document.getElementById('submit');
+        const resultContainer = document.getElementById('result');
+
+        function buildQuiz() {
+            questions.forEach((q, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('question');
+                questionElement.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+
+                const answersContainer = document.createElement('div');
+                answersContainer.classList.add('answers');
+
+                for (const [key, value] of Object.entries(q.options)) {
+                    const label = document.createElement('label');
+                    label.innerHTML = `
+                        <input type="radio" name="question${index}" value="${key}">
+                        ${key}: ${value}
+                    `;
+                    answersContainer.appendChild(label);
+                }
+
+                questionElement.appendChild(answersContainer);
+                quizContainer.appendChild(questionElement);
+            });
+        }
+
+        function showResults() {
+            let correct = 0;
+            let unanswered = false;
+
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="question${index}"]:checked`);
+                const questionElement = document.querySelectorAll(`.question`)[index];
+                const answers = questionElement.querySelectorAll('input');
+
+                answers.forEach((answer) => {
+                    const label = answer.parentElement;
+                    if (answer.value === q.answer && answer.checked) {
+                        label.classList.add('correct');
+                    } else if (answer.checked) {
+                        label.classList.add('incorrect');
+                    } else if (!selected) {
+                        label.classList.add('unanswered');
+                    }
+                });
+
+                if (!selected) {
+                    unanswered = true;
+                } else if (selected.value === q.answer) {
+                    correct++;
+                }
+            });
+
+            if (unanswered) {
+                alert("Veuillez répondre à toutes les questions avant de soumettre.");
+                const firstUnansweredQuestion = document.querySelector('.unanswered');
+                if (firstUnansweredQuestion) {
+                    firstUnansweredQuestion.scrollIntoView({ behavior: 'smooth' });
+                }
+                return;
+            }
+
+            resultContainer.textContent = `Vous avez obtenu ${correct} sur ${questions.length} questions correctes.`;
+            submitButton.style.display = 'none';
+            correctionButton.style.display = 'inline-block';
+        }
+
+        function showCorrection() {
+            const allQuestions = document.querySelectorAll('.question');
+            allQuestions.forEach((questionElement, index) => {
+                const correctAnswer = questions[index].answer;
+                const correctLabel = questionElement.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+                correctLabel.classList.add('correct');
+
+                questionElement.querySelectorAll('input').forEach((input) => {
+                    input.disabled = true;
+                });
+            });
+            correctionButton.style.display = 'none';
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener('click', showResults);
+        correctionButton.addEventListener('click', showCorrection);
+    </script>
+</body>
+</html>
