@@ -64,205 +64,455 @@
 
     <script>
         const questions = [
+            // {
+            //     "question": "Quel terme désigne les « savoirs pratiques » au Japon sous les Tokugawa ?",
+            //     "options": { "A": "Rangaku", "B": "Kokugaku", "C": "Jitsugaku", "D": "Shingaku" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Les « études pratiques » étaient destinées principalement à :",
+            //     "options": { "A": "La poésie ancienne", "B": "Les arts du gouvernement", "C": "La médecine occidentale", "D": "L’étude des religions" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quel concept était à l’origine du terme « économie » (keizai) ?",
+            //     "options": { "A": "Keisei Saimin", "B": "Kaitai Shinsho", "C": "Kaikoku Heidan", "D": "Honzôgaku" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Qui a traduit le premier ouvrage occidental majeur en japonais ?",
+            //     "options": { "A": "Hirata Atsutane", "B": "Sugita Genpaku", "C": "Noro Genjô", "D": "Maeda Tsunanori" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quelle discipline scientifique a introduit les études hollandaises au Japon ?",
+            //     "options": { "A": "Physique", "B": "Botanique médicinale", "C": "Cartographie", "D": "Littérature" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Qui était le shogun au début de l’ère Edo ?",
+            //     "options": { "A": "Toyotomi Hideyoshi", "B": "Tokugawa Ieyasu", "C": "Oda Nobunaga", "D": "Tokugawa Yoshimune" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quelle ville était la capitale administrative du shogunat Tokugawa ?",
+            //     "options": { "A": "Kyoto", "B": "Osaka", "C": "Edo", "D": "Nagasaki" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quel était le statut social des samouraïs pendant l’ère Edo ?",
+            //     "options": { "A": "Classe marchande", "B": "Classe dirigeante", "C": "Classe paysanne", "D": "Classe religieuse" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Comment appelle-t-on la politique d’isolement adoptée par le Japon durant l’ère Edo ?",
+            //     "options": { "A": "Sankin-kôtai", "B": "Sakoku", "C": "Kaikin", "D": "Rangaku" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quelle était la principale religion associée au shogunat Tokugawa ?",
+            //     "options": { "A": "Christianisme", "B": "Bouddhisme", "C": "Shintoïsme", "D": "Confucianisme" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quelle période de l'histoire japonaise a vu l'émergence des samouraïs ?",
+            //     "options": { "A": "Heian", "B": "Nara", "C": "Kamakura", "D": "Muromachi" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quelle est la signification du terme \"bakufu\" ?",
+            //     "options": { "A": "Administration impériale", "B": "Gouvernement militaire", "C": "Système féodal", "D": "Maison des samouraïs" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quel était le rôle principal des daimyos sous les Tokugawa ?",
+            //     "options": { "A": "Servir comme prêtres", "B": "Gérer leurs fiefs", "C": "Conseiller l'empereur", "D": "Conquérir de nouveaux territoires" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quelle philosophie influença fortement le shogunat Tokugawa ?",
+            //     "options": { "A": "Bouddhisme Zen", "B": "Confucianisme", "C": "Shintoïsme", "D": "Taoïsme" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quel événement marqua la fin de la période Edo ?",
+            //     "options": { "A": "La guerre de Boshin", "B": "La restauration Meiji", "C": "L'arrivée de Perry", "D": "La rébellion de Satsuma" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quel est le terme japonais pour \"fermeture du pays\" sous les Tokugawa ?",
+            //     "options": { "A": "Sakoku", "B": "Kaikoku", "C": "Kokugaku", "D": "Rangaku" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Qui était Oda Nobunaga ?",
+            //     "options": { "A": "Un daimyo célèbre pour son unité du Japon", "B": "Un moine influent du bouddhisme Zen", "C": "Le premier empereur Meiji", "D": "Un général sous Tokugawa Ieyasu" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quel ouvrage japonais a été influencé par les sciences occidentales ?",
+            //     "options": { "A": "Rangaku Kotohajime", "B": "Seiyou Kibun", "C": "Kaitai Shinsho", "D": "Edo Yarai" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quelle ville était le centre politique du Japon pendant l'époque Tokugawa ?",
+            //     "options": { "A": "Kyoto", "B": "Osaka", "C": "Edo", "D": "Nagasaki" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quel terme désigne l'apprentissage des sciences occidentales par les Japonais ?",
+            //     "options": { "A": "Rangaku", "B": "Seigaku", "C": "Kangaku", "D": "Honzogaku" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quelle dynastie chinoise a influencé le Japon pendant la période prémoderne ?",
+            //     "options": { "A": "Tang", "B": "Song", "C": "Ming", "D": "Qing" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quel est le rôle du bushido dans la culture japonaise ?",
+            //     "options": { "A": "Code moral des samouraïs", "B": "Philosophie religieuse", "C": "Système éducatif", "D": "Technique de combat" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quelle était la principale exportation japonaise sous les Tokugawa ?",
+            //     "options": { "A": "Soie", "B": "Thé", "C": "Porcelaine", "D": "Argent" },
+            //     "answer": "D"
+            // },
+            // {
+            //     "question": "Quel shogun est considéré comme le fondateur de l'époque Edo ?",
+            //     "options": { "A": "Toyotomi Hideyoshi", "B": "Tokugawa Ieyasu", "C": "Minamoto Yoritomo", "D": "Ashikaga Takauji" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quel traité a ouvert les ports japonais aux Américains en 1854 ?",
+            //     "options": { "A": "Traité de Kanagawa", "B": "Traité de Shimoda", "C": "Traité de Kyoto", "D": "Traité de Edo" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quel est le rôle principal des temples bouddhistes pendant l'époque Edo ?",
+            //     "options": { "A": "Centres de prière", "B": "Écoles publiques", "C": "Registres familiaux", "D": "Sièges politiques" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quelle classe sociale était au sommet pendant l'époque Edo ?",
+            //     "options": { "A": "Paysans", "B": "Samouraïs", "C": "Marchands", "D": "Artisans" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quelle est la signification du terme \"Han\" sous les Tokugawa ?",
+            //     "options": { "A": "Province", "B": "Clan", "C": "Fief", "D": "Château" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quel type d'art a prospéré pendant l'époque Edo ?",
+            //     "options": { "A": "Ukiyo-e", "B": "Ikebana", "C": "Nô", "D": "Sumi-e" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quel système éducatif était privilégié sous les Tokugawa ?",
+            //     "options": { "A": "Confucianisme", "B": "Bouddhisme Zen", "C": "Shintoïsme", "D": "Occidentalisme" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quelle innovation a marqué la fin de l'isolation japonaise ?",
+            //     "options": { "A": "Télégraphe", "B": "Vapeur", "C": "Imprimerie", "D": "Canon occidental" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quel empereur a initié la modernisation du Japon ?",
+            //     "options": { "A": "Meiji", "B": "Taisho", "C": "Showa", "D": "Heian" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quelle est l'importance de l'école Terakoya sous les Tokugawa ?",
+            //     "options": { "A": "Enseignement bouddhiste", "B": "Éducation des samouraïs", "C": "Éducation des enfants", "D": "Formation militaire" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Qui était Matthew Perry ?",
+            //     "options": { "A": "Un commerçant américain", "B": "Un explorateur anglais", "C": "Un commandant naval américain", "D": "Un missionnaire chrétien" },
+            //     "answer": "C"
+            // },
+            // {
+            //     "question": "Quelle est la signification de \"Shogun\" ?",
+            //     "options": { "A": "Grand général", "B": "Roi militaire", "C": "Gouverneur", "D": "Empereur" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quel était le principal port de commerce extérieur sous les Tokugawa ?",
+            //     "options": { "A": "Osaka", "B": "Kyoto", "C": "Edo", "D": "Nagasaki" },
+            //     "answer": "D"
+            // },
+            // {
+            //     "question": "Quel était le rôle des marchands dans la société Edo ?",
+            //     "options": { "A": "Au sommet de la hiérarchie", "B": "Inférieur aux paysans et artisans", "C": "Égaux aux samouraïs", "D": "Directeurs des daimyos" },
+            //     "answer": "B"
+            // },
+            // {
+            //     "question": "Quel était l'effet des lois sumptuaires sous les Tokugawa ?",
+            //     "options": { "A": "Limiter les excès", "B": "Promouvoir le commerce", "C": "Encourager la modernisation", "D": "Interdire les importations" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quelle influence culturelle est visible dans les jardins japonais prémodernes ?",
+            //     "options": { "A": "Chinoise", "B": "Coréenne", "C": "Indienne", "D": "Occidentale" },
+            //     "answer": "A"
+            // },
+            // {
+            //     "question": "Quelle était la monnaie principale pendant l'époque Edo ?",
+            //     "options": { "A": "Ryo", "B": "Yen", "C": "Koban", "D": "Mon" },
+            //     "answer": "C"
+            // }
             {
-                "question": "Quel terme désigne les « savoirs pratiques » au Japon sous les Tokugawa ?",
-                "options": { "A": "Rangaku", "B": "Kokugaku", "C": "Jitsugaku", "D": "Shingaku" },
-                "answer": "C"
-            },
-            {
-                "question": "Les « études pratiques » étaient destinées principalement à :",
-                "options": { "A": "La poésie ancienne", "B": "Les arts du gouvernement", "C": "La médecine occidentale", "D": "L’étude des religions" },
+                "question": "Le confucianisme marchand a influencé quel secteur sous les Tokugawa ?",
+                "options": { "A": "L'agriculture", "B": "Le commerce", "C": "La politique", "D": "La médecine" },
                 "answer": "B"
             },
             {
-                "question": "Quel concept était à l’origine du terme « économie » (keizai) ?",
-                "options": { "A": "Keisei Saimin", "B": "Kaitai Shinsho", "C": "Kaikoku Heidan", "D": "Honzôgaku" },
+                "question": "Quel philosophe est lié aux \"études du coeur\" (shingaku) ?",
+                "options": { "A": "Ishida Baigan", "B": "Motoori Norinaga", "C": "Sugita Genpaku", "D": "Hiraga Gennai" },
                 "answer": "A"
             },
             {
-                "question": "Qui a traduit le premier ouvrage occidental majeur en japonais ?",
-                "options": { "A": "Hirata Atsutane", "B": "Sugita Genpaku", "C": "Noro Genjô", "D": "Maeda Tsunanori" },
+                "question": "L'académie du Kaitokudô d'Ôsaka était spécialisée dans :",
+                "options": { "A": "La littérature ancienne", "B": "L'éducation des marchands", "C": "La cartographie", "D": "Les techniques agricoles" },
                 "answer": "B"
             },
             {
-                "question": "Quelle discipline scientifique a introduit les études hollandaises au Japon ?",
-                "options": { "A": "Physique", "B": "Botanique médicinale", "C": "Cartographie", "D": "Littérature" },
+                "question": "Quel ouvrage traduit par Sugita Genpaku a marqué la médecine japonaise ?",
+                "options": { "A": "Anatomische Tabellen", "B": "Kaitai Shinsho", "C": "Genji Monogatari", "D": "Man'yôshû" },
                 "answer": "B"
             },
             {
-                "question": "Qui était le shogun au début de l’ère Edo ?",
-                "options": { "A": "Toyotomi Hideyoshi", "B": "Tokugawa Ieyasu", "C": "Oda Nobunaga", "D": "Tokugawa Yoshimune" },
-                "answer": "B"
-            },
-            {
-                "question": "Quelle ville était la capitale administrative du shogunat Tokugawa ?",
-                "options": { "A": "Kyoto", "B": "Osaka", "C": "Edo", "D": "Nagasaki" },
+                "question": "Quelle discipline a motivé l'introduction des études hollandaises ?",
+                "options": { "A": "Botanique", "B": "Physique", "C": "Chirurgie", "D": "Cartographie" },
                 "answer": "C"
             },
             {
-                "question": "Quel était le statut social des samouraïs pendant l’ère Edo ?",
-                "options": { "A": "Classe marchande", "B": "Classe dirigeante", "C": "Classe paysanne", "D": "Classe religieuse" },
+                "question": "Quel était le but principal des études nationales (kokugaku) ?",
+                "options": { "A": "Adopter les idées occidentales", "B": "Rejeter l'influence chinoise", "C": "Explorer de nouveaux territoires", "D": "Unifier les pratiques religieuses" },
                 "answer": "B"
             },
             {
-                "question": "Comment appelle-t-on la politique d’isolement adoptée par le Japon durant l’ère Edo ?",
-                "options": { "A": "Sankin-kôtai", "B": "Sakoku", "C": "Kaikin", "D": "Rangaku" },
+                "question": "Le 'mono no aware' de Motoori Norinaga représente :",
+                "options": { "A": "La beauté des traditions", "B": "L'émotion face au monde", "C": "La critique littéraire", "D": "Le respect des ancêtres" },
                 "answer": "B"
             },
             {
-                "question": "Quelle était la principale religion associée au shogunat Tokugawa ?",
-                "options": { "A": "Christianisme", "B": "Bouddhisme", "C": "Shintoïsme", "D": "Confucianisme" },
+                "question": "Hirata Atsutane voulait transformer le shintô en :",
+                "options": { "A": "Une philosophie mondiale", "B": "Une religion nationale", "C": "Un outil économique", "D": "Un système politique" },
                 "answer": "B"
             },
             {
-                "question": "Quelle période de l'histoire japonaise a vu l'émergence des samouraïs ?",
-                "options": { "A": "Heian", "B": "Nara", "C": "Kamakura", "D": "Muromachi" },
-                "answer": "C"
-            },
-            {
-                "question": "Quelle est la signification du terme \"bakufu\" ?",
-                "options": { "A": "Administration impériale", "B": "Gouvernement militaire", "C": "Système féodal", "D": "Maison des samouraïs" },
-                "answer": "B"
-            },
-            {
-                "question": "Quel était le rôle principal des daimyos sous les Tokugawa ?",
-                "options": { "A": "Servir comme prêtres", "B": "Gérer leurs fiefs", "C": "Conseiller l'empereur", "D": "Conquérir de nouveaux territoires" },
-                "answer": "B"
-            },
-            {
-                "question": "Quelle philosophie influença fortement le shogunat Tokugawa ?",
-                "options": { "A": "Bouddhisme Zen", "B": "Confucianisme", "C": "Shintoïsme", "D": "Taoïsme" },
-                "answer": "B"
-            },
-            {
-                "question": "Quel événement marqua la fin de la période Edo ?",
-                "options": { "A": "La guerre de Boshin", "B": "La restauration Meiji", "C": "L'arrivée de Perry", "D": "La rébellion de Satsuma" },
-                "answer": "B"
-            },
-            {
-                "question": "Quel est le terme japonais pour \"fermeture du pays\" sous les Tokugawa ?",
-                "options": { "A": "Sakoku", "B": "Kaikoku", "C": "Kokugaku", "D": "Rangaku" },
+                "question": "Quel événement a marqué la cartographie japonaise sous les Tokugawa ?",
+                "options": { "A": "La carte d'Ino Tadataka", "B": "Le traité de Shimoda", "C": "L'expulsion de Siebold", "D": "Les explorations en Ezo" },
                 "answer": "A"
             },
             {
-                "question": "Qui était Oda Nobunaga ?",
-                "options": { "A": "Un daimyo célèbre pour son unité du Japon", "B": "Un moine influent du bouddhisme Zen", "C": "Le premier empereur Meiji", "D": "Un général sous Tokugawa Ieyasu" },
+                "question": "Quel traité a marqué la confrontation entre l'Empire russe et les Mandchous ?",
+                "options": { "A": "Traité de Nertchinsk", "B": "Traité de Kanagawa", "C": "Traité de Shimoda", "D": "Traité de Karafuto" },
                 "answer": "A"
             },
             {
-                "question": "Quel ouvrage japonais a été influencé par les sciences occidentales ?",
-                "options": { "A": "Rangaku Kotohajime", "B": "Seiyou Kibun", "C": "Kaitai Shinsho", "D": "Edo Yarai" },
-                "answer": "C"
+                "question": "La famine de l’ère Tenmei a été aggravée par :",
+                "options": { "A": "Une guerre civile", "B": "Une éruption volcanique", "C": "Un embargo chinois", "D": "Une invasion étrangère" },
+                "answer": "B"
             },
             {
-                "question": "Quelle ville était le centre politique du Japon pendant l'époque Tokugawa ?",
-                "options": { "A": "Kyoto", "B": "Osaka", "C": "Edo", "D": "Nagasaki" },
-                "answer": "C"
+                "question": "Quel savant a mené les premières explorations à Ezo ?",
+                "options": { "A": "Hayashi Shihei", "B": "Mogami Tokunai", "C": "Ino Tadataka", "D": "Sugita Genpaku" },
+                "answer": "B"
             },
             {
-                "question": "Quel terme désigne l'apprentissage des sciences occidentales par les Japonais ?",
-                "options": { "A": "Rangaku", "B": "Seigaku", "C": "Kangaku", "D": "Honzogaku" },
-                "answer": "A"
+                "question": "Les 'études du coeur' (shingaku) promouvaient :",
+                "options": { "A": "Une philosophie morale pour les samouraïs", "B": "L'éthique marchande", "C": "La poésie ancienne", "D": "L'apprentissage des langues étrangères" },
+                "answer": "B"
             },
             {
-                "question": "Quelle dynastie chinoise a influencé le Japon pendant la période prémoderne ?",
-                "options": { "A": "Tang", "B": "Song", "C": "Ming", "D": "Qing" },
-                "answer": "C"
-            },
-            {
-                "question": "Quel est le rôle du bushido dans la culture japonaise ?",
-                "options": { "A": "Code moral des samouraïs", "B": "Philosophie religieuse", "C": "Système éducatif", "D": "Technique de combat" },
-                "answer": "A"
-            },
-            {
-                "question": "Quelle était la principale exportation japonaise sous les Tokugawa ?",
-                "options": { "A": "Soie", "B": "Thé", "C": "Porcelaine", "D": "Argent" },
+                "question": "La pièce 'Nanryô de 2 shu' a été introduite pour :",
+                "options": { "A": "Stabiliser les prix", "B": "Réorganiser le commerce", "C": "Contrôler les exportations", "D": "Harmoniser le système monétaire" },
                 "answer": "D"
             },
             {
-                "question": "Quel shogun est considéré comme le fondateur de l'époque Edo ?",
-                "options": { "A": "Toyotomi Hideyoshi", "B": "Tokugawa Ieyasu", "C": "Minamoto Yoritomo", "D": "Ashikaga Takauji" },
-                "answer": "B"
-            },
-            {
-                "question": "Quel traité a ouvert les ports japonais aux Américains en 1854 ?",
-                "options": { "A": "Traité de Kanagawa", "B": "Traité de Shimoda", "C": "Traité de Kyoto", "D": "Traité de Edo" },
-                "answer": "A"
-            },
-            {
-                "question": "Quel est le rôle principal des temples bouddhistes pendant l'époque Edo ?",
-                "options": { "A": "Centres de prière", "B": "Écoles publiques", "C": "Registres familiaux", "D": "Sièges politiques" },
+                "question": "Les réformes de Yoshimune ont introduit :",
+                "options": { "A": "Des lois somptuaires", "B": "La libéralisation du commerce", "C": "Les recensements réguliers", "D": "L'imposition unique" },
                 "answer": "C"
             },
             {
-                "question": "Quelle classe sociale était au sommet pendant l'époque Edo ?",
-                "options": { "A": "Paysans", "B": "Samouraïs", "C": "Marchands", "D": "Artisans" },
-                "answer": "B"
-            },
-            {
-                "question": "Quelle est la signification du terme \"Han\" sous les Tokugawa ?",
-                "options": { "A": "Province", "B": "Clan", "C": "Fief", "D": "Château" },
+                "question": "La technique de l'estampe japonaise en couleur (nishiki-e) a transformé :",
+                "options": { "A": "La littérature", "B": "La médecine", "C": "Les arts visuels", "D": "La cartographie" },
                 "answer": "C"
             },
             {
-                "question": "Quel type d'art a prospéré pendant l'époque Edo ?",
-                "options": { "A": "Ukiyo-e", "B": "Ikebana", "C": "Nô", "D": "Sumi-e" },
-                "answer": "A"
-            },
-            {
-                "question": "Quel système éducatif était privilégié sous les Tokugawa ?",
-                "options": { "A": "Confucianisme", "B": "Bouddhisme Zen", "C": "Shintoïsme", "D": "Occidentalisme" },
-                "answer": "A"
-            },
-            {
-                "question": "Quelle innovation a marqué la fin de l'isolation japonaise ?",
-                "options": { "A": "Télégraphe", "B": "Vapeur", "C": "Imprimerie", "D": "Canon occidental" },
+                "question": "L'école de Mito a fusionné les études nationales avec :",
+                "options": { "A": "L'histoire militaire", "B": "La réflexion politique", "C": "Les récits mythologiques", "D": "La cartographie" },
                 "answer": "B"
             },
             {
-                "question": "Quel empereur a initié la modernisation du Japon ?",
+                "question": "La montée en prestige du Tennô au 18e siècle était liée à :",
+                "options": { "A": "La réaffirmation des traditions anciennes", "B": "La conquête de nouveaux territoires", "C": "La croissance économique", "D": "L'exportation des savoirs japonais" },
+                "answer": "A"
+            },
+            {
+                "question": "Le Kaitokudô d’Ôsaka était connu pour :",
+                "options": { "A": "L'éducation des marchands", "B": "La recherche militaire", "C": "Les études religieuses", "D": "La culture des terres" },
+                "answer": "A"
+            },
+            {
+                "question": "Les daimyô en faillite au 18e siècle :",
+                "options": { "A": "Réformaient leur économie avec les marchands", "B": "Augmentaient les impôts", "C": "Cherchaient l'aide internationale", "D": "Cessaient leur activité politique" },
+                "answer": "A"
+            },
+            {
+                "question": "Le shogunat Tokugawa a maintenu la paix grâce à :",
+                "options": { "A": "La construction de forts", "B": "Le contrôle des daimyô", "C": "Les alliances avec la Chine", "D": "Une armée centralisée" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel terme désigne la résidence forcée des daimyô à Edo ?",
+                "options": { "A": "Rangaku", "B": "Sankin-kôtai", "C": "Sakoku", "D": "Kaikin" },
+                "answer": "B"
+            },
+            {
+                "question": "Les explorations dans les îles Kouriles ont été motivées par :",
+                "options": { "A": "Une curiosité géographique", "B": "La menace russe", "C": "La recherche de terres agricoles", "D": "Le commerce avec la Chine" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle innovation a transformé la production de livres à Edo ?",
+                "options": { "A": "La gravure sur bois", "B": "L'impression typographique", "C": "La presse occidentale", "D": "Le papier japonais" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel empereur a initié la restauration Meiji ?",
                 "options": { "A": "Meiji", "B": "Taisho", "C": "Showa", "D": "Heian" },
                 "answer": "A"
             },
             {
-                "question": "Quelle est l'importance de l'école Terakoya sous les Tokugawa ?",
-                "options": { "A": "Enseignement bouddhiste", "B": "Éducation des samouraïs", "C": "Éducation des enfants", "D": "Formation militaire" },
-                "answer": "C"
-            },
-            {
-                "question": "Qui était Matthew Perry ?",
-                "options": { "A": "Un commerçant américain", "B": "Un explorateur anglais", "C": "Un commandant naval américain", "D": "Un missionnaire chrétien" },
-                "answer": "C"
-            },
-            {
-                "question": "Quelle est la signification de \"Shogun\" ?",
-                "options": { "A": "Grand général", "B": "Roi militaire", "C": "Gouverneur", "D": "Empereur" },
+                "question": "Quelle ressource était échangée avec les Aïnous ?",
+                "options": { "A": "Fourrures", "B": "Riz", "C": "Objets en bois", "D": "Algues séchées" },
                 "answer": "A"
             },
             {
-                "question": "Quel était le principal port de commerce extérieur sous les Tokugawa ?",
-                "options": { "A": "Osaka", "B": "Kyoto", "C": "Edo", "D": "Nagasaki" },
-                "answer": "D"
-            },
-            {
-                "question": "Quel était le rôle des marchands dans la société Edo ?",
-                "options": { "A": "Au sommet de la hiérarchie", "B": "Inférieur aux paysans et artisans", "C": "Égaux aux samouraïs", "D": "Directeurs des daimyos" },
+                "question": "Hiraga Gennai est connu pour :",
+                "options": { "A": "La médecine", "B": "L'électricité", "C": "La littérature", "D": "La philosophie" },
                 "answer": "B"
             },
             {
-                "question": "Quel était l'effet des lois sumptuaires sous les Tokugawa ?",
-                "options": { "A": "Limiter les excès", "B": "Promouvoir le commerce", "C": "Encourager la modernisation", "D": "Interdire les importations" },
+                "question": "Les crises de subsistance au 18e siècle étaient aggravées par :",
+                "options": { "A": "Les réformes des daimyô", "B": "Les mauvaises récoltes", "C": "L'inflation", "D": "Les interdictions commerciales" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel traité a mis fin à l'isolement du Japon ?",
+                "options": { "A": "Traité de Nankin", "B": "Traité de Kanagawa", "C": "Traité de Versailles", "D": "Traité de Shimoda" },
+                "answer": "B"
+            },
+            {
+                "question": "Les corporations de marchands (kabu-nakama) servaient à :",
+                "options": { "A": "Réguler les prix et approvisionner les cités", "B": "Développer la cartographie", "C": "Assurer l'éducation populaire", "D": "Instaurer un système bancaire" },
                 "answer": "A"
             },
             {
-                "question": "Quelle influence culturelle est visible dans les jardins japonais prémodernes ?",
-                "options": { "A": "Chinoise", "B": "Coréenne", "C": "Indienne", "D": "Occidentale" },
+                "question": "Les études hollandaises ont introduit quelle science au Japon ?",
+                "options": { "A": "La chimie", "B": "L'anatomie", "C": "La cartographie", "D": "L'astronomie" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle était la monnaie principale utilisée au Japon sous les Tokugawa ?",
+                "options": { "A": "Le koban", "B": "Le yen", "C": "Le mon", "D": "Le ryo" },
                 "answer": "A"
             },
             {
-                "question": "Quelle était la monnaie principale pendant l'époque Edo ?",
-                "options": { "A": "Ryo", "B": "Yen", "C": "Koban", "D": "Mon" },
-                "answer": "C"
+                "question": "Quel terme décrit la philosophie morale des samouraïs ?",
+                "options": { "A": "Bushido", "B": "Kokugaku", "C": "Rangaku", "D": "Shingaku" },
+                "answer": "A"
+            },
+            {
+                "question": "Sous les Tokugawa, quelle pratique assurait le contrôle des daimyô ?",
+                "options": { "A": "Le sakoku", "B": "Le sankin-kôtai", "C": "Le kabu-nakama", "D": "Le seppuku" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle école est liée à l’étude de la poésie ancienne japonaise ?",
+                "options": { "A": "Rangaku", "B": "Kokugaku", "C": "Shingaku", "D": "Bushido" },
+                "answer": "B"
+            },
+            {
+                "question": "Quel est le nom de l’œuvre influente d’Aizawa Seishisai ?",
+                "options": { "A": "Shinron", "B": "Kaitai Shinsho", "C": "Genji Monogatari", "D": "Rangaku Kotohajime" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle ressource était cruciale dans le commerce avec les Hollandais ?",
+                "options": { "A": "L'argent", "B": "Les algues", "C": "Le riz", "D": "La soie" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle crise majeure a conduit aux réformes Kansei ?",
+                "options": { "A": "La famine de l’ère Tenmei", "B": "Une révolte paysanne", "C": "L'arrivée des navires étrangers", "D": "Une dévaluation monétaire" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel savant a contribué à la diffusion des sciences occidentales ?",
+                "options": { "A": "Sugita Genpaku", "B": "Motoori Norinaga", "C": "Hirata Atsutane", "D": "Ishida Baigan" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle ville était la plus importante pour le commerce extérieur sous les Tokugawa ?",
+                "options": { "A": "Kyoto", "B": "Nagasaki", "C": "Edo", "D": "Osaka" },
+                "answer": "B"
+            },
+            {
+                "question": "Les daimyô devaient passer une partie de leur temps à Edo sous :",
+                "options": { "A": "La politique du sakoku", "B": "Le système sankin-kôtai", "C": "Le contrôle des kabu-nakama", "D": "Les lois somptuaires" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle réforme économique a été mise en œuvre par Matsudaira Sadanobu ?",
+                "options": { "A": "Les réformes Kansei", "B": "Les réformes Meiji", "C": "La politique Sakoku", "D": "L'introduction des études hollandaises" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel terme désigne la fermeture du Japon aux relations étrangères ?",
+                "options": { "A": "Sakoku", "B": "Kaikoku", "C": "Rangaku", "D": "Shingaku" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle philosophie a fortement influencé les politiques éducatives sous les Tokugawa ?",
+                "options": { "A": "Le confucianisme", "B": "Le bouddhisme Zen", "C": "Le shintoïsme", "D": "Le taoïsme" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel savant est célèbre pour sa carte détaillée du Japon ?",
+                "options": { "A": "Sugita Genpaku", "B": "Ino Tadataka", "C": "Motoori Norinaga", "D": "Mogami Tokunai" },
+                "answer": "B"
+            },
+            {
+                "question": "Quelle politique visait à limiter l'influence étrangère au Japon ?",
+                "options": { "A": "Le sakoku", "B": "Le sankin-kôtai", "C": "Les lois somptuaires", "D": "Les réformes Kansei" },
+                "answer": "A"
+            },
+            {
+                "question": "Qui a joué un rôle clé dans l'introduction de l'anatomie occidentale au Japon ?",
+                "options": { "A": "Sugita Genpaku", "B": "Ishida Baigan", "C": "Motoori Norinaga", "D": "Hirata Atsutane" },
+                "answer": "A"
+            },
+            {
+                "question": "Quelle ressource était principalement échangée par les Aïnous ?",
+                "options": { "A": "Les fourrures", "B": "Le riz", "C": "Les poissons", "D": "Les algues" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel terme est associé à l'étude des sciences occidentales au Japon ?",
+                "options": { "A": "Rangaku", "B": "Kokugaku", "C": "Shingaku", "D": "Sakoku" },
+                "answer": "A"
+            },
+            {
+                "question": "Quel philosophe a voulu revitaliser les traditions shintoïstes ?",
+                "options": { "A": "Hirata Atsutane", "B": "Motoori Norinaga", "C": "Sugita Genpaku", "D": "Ino Tadataka" },
+                "answer": "A"
             }
         ];
 
